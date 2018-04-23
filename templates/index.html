@@ -1,0 +1,70 @@
+{% extends 'base_nocc.tpl' %}
+
+{% block title %}
+名作ライトノベル作品データベース - Home
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block contents %}
+<!--<h2>名作ライトノベル作品データベース</h2>-->
+<style>
+.custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    display: inline-block;
+    /* Or set the width explicitly: */
+    /* width: 10em; */
+}
+</style>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="search" class="pure-menu-link">検索</a></li>
+        <li class="pure-menu-item"><a href="#about" class="pure-menu-link">このサイトについて</a></li>
+        <li class="pure-menu-item"><a href="#about-good-novel" class="pure-menu-link">名作ライトノベルの定義とは？</a></li>
+        <!-- <li class="pure-menu-item"><a href="#about-us" class="pure-menu-link">Studio 4単位とは？</a></li> -->
+    </ul>
+</div>
+
+<h2 id="about">このサイトについて</h2>
+このサイトはライトノベルのデータベースって無くね？と考えた作者の自己満足と作者の勉強用にと作られたサイトです。
+開発にはPythonの<a href="http://flask.pocoo.org/">Flask</a>を使いました。
+
+<h2 id="about-good-novel">このサイトのいう、名作ライトノベルの定義は？</h2>
+名作ライトノベルとしてこのデータベースに登録されるための条件は、
+<ol>
+    <li>その作品の作者、または、読者の大半がこれはライトノベルだ、と主張しているもの、もしくは、その作品が刊行されているレーベルがライトノベルのレーベルであるとわかるもの。</li>
+    <li>物語の一部または全てが映像化されている、もしくはされる予定のもの。</li>
+    <li>根強く読者の支持を得ているもの。</li>
+    <li>新人賞を除く、何らかの賞を受賞しているもの。</li>
+</ol>
+のうち、3つ以上を満たすものです。あとは作者の独断と偏見です。
+
+<!--
+<h2 id="about-us">Studio 4単位とは？</h2>
+<p><a href="#kzkir">葛切エイト</a>と<a href="#eniehack">カフェイン</a>によるプロジェクトというか…。<br/>
+    なんか、「Studio」って付くとかっこいいじゃないですか？まぁ、そんな感じです。はい。<br/>
+    え？なぜ4単位か、って？私達の学校、一年は四教科落とすと留年だからです。<del>煽りです。</del><br/>
+    <a href="https://twitter.com/Studio_4units">Twitter</a>も貼っておきますね。
+</p>
+<h4>Menber</h4>
+<ul>
+    <h6 id="kzkir"><li><a href="https://twitter.com/intent/user?user_id=962672448821805057">葛切エイト</a></li></h6>
+        <ul>
+            <li>これの共同作者。</li>
+            <li>"Project Emortalize"とかいうノベルゲーム制作サークルのスクリプト・技術担当だったりする。</li>
+            <li><del>実はカフェインと同一人物ではないか、という説がある。</del></li>
+        </ul>
+</ul>
+<ul>
+    <h6 id="eniehack"><li><a href="https://twitter.com/intent/user?user_id=3503112972">カフェイン</a></li></h6>
+        <ul>
+            <li>これの共同作者。</li>
+            <li>平日は100ツイート以下/Day、休日は200ツイート/Dayもざらな<del>ツイ廃</del>暇人。</li>
+            <li>最近、PythonとC++を勉強してるとかしてないとか。</li>
+            <li>黒いコンソール画面が嫌いなため、Webプログラミングをやってるひと。最近はQtに悩まされているらしい。</li>
+        </ul>
+</ul>
+-->
+
+{% endblock %}

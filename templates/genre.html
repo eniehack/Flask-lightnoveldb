@@ -1,0 +1,17 @@
+{% extends 'base_nocc.tpl' %}
+
+{% block title %}
+ジャンルが{{ genre }}の作品一覧
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block contents %}
+
+{{count}}件の結果<br/><br/>
+{% for row in result %}
+<li><a href="../work/{{ row }}">{{ row }}</a></li>
+{% endfor %}
+
+{% endblock %}

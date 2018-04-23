@@ -1,0 +1,17 @@
+{% extends 'base_nocc.tpl' %}
+
+{% block title %}
+検索結果
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block contents %}
+
+<p>{{count}}件の結果</p><br/><br/>
+{% for row in result %}
+<li><a href="../work/{{row}}">{{ row }}</a></li>
+{% endfor %}
+
+{% endblock %}

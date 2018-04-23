@@ -1,0 +1,50 @@
+{% extends 'base_nocc.tpl' %}
+
+{% block title %}
+検索
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block contents %}
+    <form method="post" action="search">
+        <fieldset>
+            <legend>作品検索</legend>
+
+            <div class="six columns">
+                <label for="name">作品名 及び その一部</label>
+                <input type="text" name="title">
+            </div>
+
+            <div class="six columns">
+                <label for="name">文庫名</label>
+                <select name="label">
+                    <option value="NULL">指定しない</option>
+                    <option value="ガガガ文庫">ガガガ文庫</option>
+                    <option value="富士見ファンタジア文庫">富士見ファンタジア文庫</option>
+                    <option value="電撃文庫">電撃文庫</option>
+                    <option value="MF文庫J">MF文庫J</option>
+                </select>
+            </div>
+
+            <div class="pure-control-group">
+                <label for="name">作家名</label>
+                <input type="text" name="writer">
+            </div>
+
+            <div>
+                <label for="name">ジャンル</label>
+                <select name="genre">
+                    <option value="NULL">指定しない</option>
+                    <option value="ラブコメ">ラブコメ</option>
+                    <option value="SF">SF</option>
+                    <option value="ファンタジー">ファンタジー</option>
+                </select>
+            </div>
+
+            <button type="submit" class="button-primary">検索</button>
+            <button type="reset" class="button">リセット</button>
+        </fieldset>
+    </form>
+{% endblock %}
