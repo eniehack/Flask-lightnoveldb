@@ -1,7 +1,7 @@
 # Flask-lightnoveldb
 このプロジェクトはライトノベルの検索ができるサイトを作っています.  
 使用言語はPython,使用フレームワークはFlaskです.
-ライセンスに関してはLICENSE.mdをご覧ください
+ライセンスに関してはLICENSEをご覧ください
 ## 必要パッケージ
 WindowsのInteliJ IDEA Ultimateとvenv環境で開発しています.  
 下に2018.04.22現在の`pip freeze`の結果を示します
@@ -20,7 +20,7 @@ WindowsのInteliJ IDEA Ultimateとvenv環境で開発しています.
 `pip install flask pymysql`
 - リポジトリをクローンする  
 
-`hg clone https://bitbucket.org/eniehack/lightnovel-database`
+`git clone https://github.com/eniehack/Flask-lightnoveldb.git`
 
 - SQLサーバにテーブルを作成する  
 
@@ -36,7 +36,7 @@ WindowsのInteliJ IDEA Ultimateとvenv環境で開発しています.
       `ISBN` varchar(13) DEFAULT NULL,
       `nick` text DEFAULT NULL,
       `genre` text DEFAULT NULL
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+      )
 `
 
 - app.pyのディレクトリに`sql.json`を作成して下のように編集して保存  
