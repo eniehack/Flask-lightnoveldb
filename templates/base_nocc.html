@@ -10,9 +10,20 @@
 
 </head>
 <body>
-<header class="header">
-  <h1>名作ライトノベル作品データベース</h1>
-</header>
+    <header class="header">
+        <div class="left">
+            <h1>名作ライトノベル作品データベース</h1>
+            <span class="borderbox">Beta</span>
+        </div>
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <il class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></il>
+                <li class="pure-menu-item"><a href="search" class="pure-menu-link">Search</a></li>
+                <li class="pure-menu-item"><a href="about" class="pure-menu-link">About</a></li>
+                <li class="pure-menu-item"><a href="about#good-novel" class="pure-menu-link">名作ライトノベルの定義とは？</a></li>
+            </ul>
+        </div>
+    </header>
 <main>
 
   {% block contents %}
@@ -21,6 +32,6 @@
 </main>
   <br />
   <a href="/">Back to Home</a>
-  <p><small>&copy;2018 <a href="https://twitter.com/intent/user?user_id=3503112972">Studio 4単位/Eniehack</a> </small></p><br>
+  <p><small>&copy; 2018 <a href="https://twitter.com/intent/user?user_id=3503112972">Studio 4単位/Eniehack</a> </small></p><br>
 </body>
 </html>
