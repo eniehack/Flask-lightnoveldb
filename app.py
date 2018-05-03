@@ -28,7 +28,7 @@ def get_data(sql):
 
     for row in get_query:
         data.append(row[0])
-        count = count + 1
+        count += 1
 
     result.append(data)
     result.append(count)
