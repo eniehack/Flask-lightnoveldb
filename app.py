@@ -91,8 +91,9 @@ def work(title) -> str:
     sql = "SELECT * FROM `novels` WHERE `title` = '{0}'".format(title)
 
     result = send_query(sql)
+    gen = result[0][9].split(",")
 
-    return render_template('work.html', data=result[0])
+    return render_template('work.html', data=result[0], genre=gen)
 
 
 @app.route('/writer/<writer>', methods=['GET'])
@@ -128,11 +129,23 @@ def label(label):
 @app.route('/genre/<genre>', methods=['GET'])
 def genre(genre) -> str:
 
-    sql = "SELECT * FROM `novels` WHERE `genre` = '{0}'".format(genre)
+    sql = "SELECT * FROM `novels` WHERE `genre` LIKE '%{0}%'".format(genre)
 
     result = get_data(sql)
 
     return render_template('genre.html', result=result[0], count=result[1], genre=genre)
+
+
+@app.route('/book/<title>', methods=['GET'])
+def book(title):
+
+    sql = "SELECT * FROM `novels` WHERE `title` = '{0}'".format(title)
+
+    result = get_data(sql)
+    #isbns = []
+    isbns = result[7].split(",")
+
+    return render_template('book.html', title=title, data=isbns)
 
 
 if __name__ == '__main__':
