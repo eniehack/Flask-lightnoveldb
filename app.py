@@ -88,7 +88,7 @@ def post_search() -> str:
 @app.route('/work/<title>', methods=['GET'])
 def work(title) -> str:
 
-    sql = "SELECT * FROM `novels` WHERE `title` = {0}".format(title)
+    sql = "SELECT * FROM `novels` WHERE `title` = '{0}'".format(title)
 
     result = send_query(sql)
 
@@ -98,7 +98,7 @@ def work(title) -> str:
 @app.route('/writer/<writer>', methods=['GET'])
 def writer(writer) -> str:
 
-    sql = "SELECT * FROM `novels` WHERE `writer` = {0}".format(writer)
+    sql = "SELECT * FROM `novels` WHERE `writer` = '{0}'".format(writer)
 
     result = get_data(sql)
 
@@ -108,7 +108,7 @@ def writer(writer) -> str:
 @app.route('/illust/<illust>', methods=['GET'])
 def illust(illust) -> str:
 
-    sql = "SELECT * FROM `novels` WHERE `illustration` = {0}".format(illust)
+    sql = "SELECT * FROM `novels` WHERE `illustration` = '{0}'".format(illust)
 
     result = get_data(sql)
 
@@ -118,7 +118,7 @@ def illust(illust) -> str:
 @app.route('/label/<label>', methods=['GET'])
 def label(label):
 
-    sql = "SELECT * FROM `novels` WHERE `label` = {0}".format(label)
+    sql = "SELECT * FROM `novels` WHERE `label` = '{0}'".format(label)
 
     result = get_data(sql)
 
@@ -128,7 +128,7 @@ def label(label):
 @app.route('/genre/<genre>', methods=['GET'])
 def genre(genre) -> str:
 
-    sql = "SELECT * FROM `novels` WHERE `genre` = {0}".format(genre)
+    sql = "SELECT * FROM `novels` WHERE `genre` = '{0}'".format(genre)
 
     result = get_data(sql)
 
