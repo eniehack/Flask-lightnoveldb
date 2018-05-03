@@ -1,25 +1,19 @@
 from flask import Flask, render_template, request
-import pymysql
-import json
+import sqlite3
 
 app = Flask(__name__)
 
 
 def send_query(sql):
 
-    with open('sql.json', 'r') as f:
-        data = json.load(f)
-        connector = pymysql.connect(
-            host=data['host'],
-            db=data['db'],
-            user=data['user'],
-            passwd=data['pass'],
-            charset=data['charset']
-        )
+    connector = sqlite3.connect('novels.db')
+    cursor = connector.cursor()
 
-    with connector.cursor() as cursor:
-        cursor.execute(sql)
-        get_query = cursor.fetchall()
+    cursor.execute(sql)
+    get_query = cursor.fetchall()
+
+    cursor.close()
+    connector.close()
 
     return get_query
 
@@ -61,22 +55,22 @@ def post_search() -> str:
     genre = request.form['genre']
 
     if title is not None:
-        sql = "SELECT * FROM `test` WHERE `title` LIKE '%{0}%'".format(title)
+        sql = "SELECT * FROM `novels` WHERE `title` LIKE '%{0}%'".format(title)
 
     if sql is None and writer is not None:
-        sql = "SELECT * FROM `test` WHERE `writer` LIKE '%{0}%'".format(writer)
+        sql = "SELECT * FROM `novels` WHERE `writer` LIKE '%{0}%'".format(writer)
     elif sql is not None and writer is not None:
         sql = sql + "AND `writer` LIKE '%{0}%'".format(writer)
 
     if label != 'NULL':
         if sql is None and label is not None:
-            sql = "SELECT * FROM `test` WHERE `label` LIKE '%{0}%'".format(label)
+            sql = "SELECT * FROM `novels` WHERE `label` LIKE '%{0}%'".format(label)
         elif sql is not None and label is not None:
             sql = sql + "AND `label` LIKE '%{0}%'".format(label)
 
     if genre != 'NULL':
         if sql is None and genre is not None:
-            sql = "SELECT * FROM `test` WHERE `genre` LIKE '%{0}%'".format(genre)
+            sql = "SELECT * FROM `novels` WHERE `genre` LIKE '%{0}%'".format(genre)
         elif sql is not None and genre is not None:
             sql = sql + "AND `genre` LIKE '%{0}%'".format(genre)
 
@@ -88,7 +82,7 @@ def post_search() -> str:
 @app.route('/work/<title>', methods=['GET'])
 def work(title) -> str:
 
-    sql = "SELECT * FROM `test` WHERE `title` = {0}".format(title)
+    sql = "SELECT * FROM `novels` WHERE `title` = {0}".format(title)
 
     result = send_query(sql)
 
@@ -98,7 +92,7 @@ def work(title) -> str:
 @app.route('/writer/<writer>', methods=['GET'])
 def writer(writer) -> str:
 
-    sql = "SELECT * FROM `test` WHERE `writer` = {0}".format(writer)
+    sql = "SELECT * FROM `novels` WHERE `writer` = {0}".format(writer)
 
     result = get_data(sql)
 
@@ -108,7 +102,7 @@ def writer(writer) -> str:
 @app.route('/illust/<illust>', methods=['GET'])
 def illust(illust) -> str:
 
-    sql = "SELECT * FROM `test` WHERE `illust` = {0}".format(illust)
+    sql = "SELECT * FROM `novels` WHERE `illustration` = {0}".format(illust)
 
     result = get_data(sql)
 
@@ -118,7 +112,7 @@ def illust(illust) -> str:
 @app.route('/label/<label>', methods=['GET'])
 def label(label):
 
-    sql = "SELECT * FROM `test` WHERE `label` = {0}".format(label)
+    sql = "SELECT * FROM `novels` WHERE `label` = {0}".format(label)
 
     result = get_data(sql)
 
@@ -128,7 +122,7 @@ def label(label):
 @app.route('/genre/<genre>', methods=['GET'])
 def genre(genre) -> str:
 
-    sql = "SELECT * FROM `test` WHERE `genre` = {0}".format(genre)
+    sql = "SELECT * FROM `novels` WHERE `genre` = {0}".format(genre)
 
     result = get_data(sql)
 
