@@ -53,6 +53,7 @@ def post_search() -> str:
     label = request.form['label']
     writer = request.form['writer']
     genre = request.form['genre']
+    illustration = request.form['illustration']
 
     if title is not None:
         sql = "SELECT * FROM `novels` WHERE `title` LIKE '%{0}%'".format(title)
@@ -61,6 +62,11 @@ def post_search() -> str:
         sql = "SELECT * FROM `novels` WHERE `writer` LIKE '%{0}%'".format(writer)
     elif sql is not None and writer is not None:
         sql = sql + "AND `writer` LIKE '%{0}%'".format(writer)
+
+    if sql is None and illustration is not None:
+        sql = "SELECT * FROM `novels` WHERE `illustration` LIKE '%{0}%'".format(illustration)
+    elif sql is not None and illustration is not None:
+        sql = sql + "AND `illustration` LIKE '%{0}%'".format(illustration)
 
     if label != 'NULL':
         if sql is None and label is not None:
