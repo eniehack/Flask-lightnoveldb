@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="/static/css/menus-min.css">
+  <link rel="stylesheet" href="/static/css/pure-min.css">
   <link rel="stylesheet" href="/static/css/skeleton.css">
   <link rel="stylesheet" href="/static/css/style.css">
 
