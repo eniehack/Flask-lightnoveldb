@@ -26,7 +26,7 @@ Flaskだけでいけます.
       `ISBN` varchar(13) DEFAULT NULL,
       `nick` text DEFAULT NULL,
       `genre` text DEFAULT NULL
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+      );
 `
 
 ホスティングに関してはまったくわからないのでggってください
