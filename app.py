@@ -141,9 +141,10 @@ def book(title):
 
     sql = "SELECT * FROM `novels` WHERE `title` = '{0}'".format(title)
 
-    result = get_data(sql)
-    #isbns = []
-    isbns = result[7].split(",")
+    result = send_query(sql)
+    print(result)
+    isbns = result[0][7].split(",")
+    print(isbns)
 
     return render_template('book.html', title=title, data=isbns)
 

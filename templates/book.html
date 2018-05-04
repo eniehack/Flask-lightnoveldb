@@ -1,0 +1,26 @@
+{% extends 'base_nocc.html' %}
+
+{% block title %}
+    『{{ title }}』の既刊情報
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block contents %}
+    <h2>『{{ title }}』 既刊情報</h2>
+    {% for row in data %}
+        <h5>{{ loop.index }}巻</h5>
+        <li><a href="https://www.amazon.co.jp/s/field-keywords={{ row }}">Amazon</a></li>
+        <li><a href="https://search.rakuten.co.jp/search/mall/{{ row }}">Rakuten</a></li>
+        <li><a href="https://shopping.yahoo.co.jp/search?first=1&tab_ex=commerce&fr=shp-prop&p={{ row }}">Yahoo!ショッピング</a></li>
+        <li><a href="https://www.e-hon.ne.jp/bec/SA/Detail?refISBN={{ row }}">e-hon</a></li>
+        <li><a href="https://www.honyaclub.com/shop/goods/search.aspx?cat_p=&search=%8C%9F%8D%F5&keyw={{ row }}&image.x=10&image.y=7">Honya-Club</a></li>
+        <li><a href="https://honto.jp/netstore/search_10{{ row }}.html?srchf=1&tbty=0">Honto</a></li>
+        <li><a href="https://7net.omni7.jp/detail_isbn/{{ row }}">omni7</a></li>
+        <li><a href="https://www.kinokuniya.co.jp/f/dsg-01-{{ row }}">紀伊国屋書店</a></li>
+        <li><a href="http://shop.tsutaya.co.jp/book/product/{{ row }}">TSUTAYA</a></li>
+    {% endfor %}
+
+{% endblock %}
+

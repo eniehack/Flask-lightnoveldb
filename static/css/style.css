@@ -2,6 +2,7 @@ header.header {
     padding: 1.5rem 2rem;
     border-bottom: 1px solid #CFD8DC;
     margin-bottom: 2rem;
+    align-items: center;
 }
 
 header.header h1 {
@@ -15,7 +16,17 @@ header.header h1 {
     border: 1px solid black;
     padding: 4px 8px;
     border-radius: 2px;
+    align-items: center;
 }
 .left {
     align-items: center;
+}
+
+.footer {
+    padding: 1em 2em 0;
+    text-align: center;
+    border-top: solid 1px gray;
+}
+.copyright {
+    text-align: center;
 }
