@@ -3,24 +3,14 @@
 使用言語はPython,使用フレームワークはFlaskです.
 ライセンスに関してはLICENSE.mdをご覧ください
 ## 必要パッケージ
-WindowsのInteliJ IDEA Ultimateとvenv環境で開発しています.  
-下に2018.04.22現在の`pip freeze`の結果を示します
-
-- `click==6.7`
-- `Flask==0.12.2`
-- `itsdangerous==0.24`
-- `Jinja2==2.10`
-- `MarkupSafe==1.0`
-- `PyMySQL==0.8.0`
-- `Werkzeug==0.14.1`  
-最新版にアップグレードしても動くと思います
+Flaskだけでいけます.
 
 ## インストール
-- 必要なパッケージをインストール
-`pip install flask pymysql`
+- 必要なパッケージをインストール  
+`pip install -r requirements.txt`
 - リポジトリをクローンする  
 
-`hg clone https://bitbucket.org/eniehack/lightnovel-database`
+`git clone https://github.com/eniehack/Flask-lightnoveldb.git`
 
 - SQLサーバにテーブルを作成する  
 
@@ -37,19 +27,6 @@ WindowsのInteliJ IDEA Ultimateとvenv環境で開発しています.
       `nick` text DEFAULT NULL,
       `genre` text DEFAULT NULL
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-`
-
-- app.pyのディレクトリに`sql.json`を作成して下のように編集して保存  
-
-`
-
-    {
-    "host": "SQLサーバのホスト",
-    "db": "データベース名",
-    "user": "ユーザー名",
-    "pass": "パスワード",
-    "charset": "utf8"
-    }
 `
 
 ホスティングに関してはまったくわからないのでggってください
@@ -89,27 +66,6 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE AND DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
-### PyMySQL
-
-Copyright (c) 2010, 2013 PyMySQL contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
 ### Pure
 
 Software License Agreement (BSD License)
