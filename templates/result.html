@@ -1,4 +1,4 @@
-{% extends 'base_nocc.tpl' %}
+{% extends 'base_nocc.html' %}
 
 {% block title %}
 検索結果
@@ -9,7 +9,7 @@
 
 {% block contents %}
 
-<p>{{count}}件の結果</p><br/><br/>
+<p>{{count}}件の結果</p>
 {% for row in result %}
 <li><a href="../work/{{row}}">{{ row }}</a></li>
 {% endfor %}

@@ -1,4 +1,6 @@
-/.idea
+/.idea/
 /Flask-lightnoveldb.iml
-/venv
+/venv/
 /.gitignore
+/*.db-journal
+/*.db

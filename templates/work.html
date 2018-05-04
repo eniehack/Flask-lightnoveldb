@@ -1,4 +1,4 @@
-{% extends 'base.tpl' %}
+{% extends 'base.html' %}
 
 {% block title %}
 作品詳細
@@ -15,18 +15,36 @@
 <p>イラストレータ: <a href="../illust/{{ data[2] }}">{{ data[2] }}</a></p>
 <p>レーベル: <a href="../label/{{ data[3] }}">{{ data[3] }}</a></p>
 
-{% if data[4] == 1 %}
-    <p>映像化されました。</p>
-{% else %}
+{% if data[4] == 'End' %}
+    <p>この作品はすべてが映像化されました。</p>
+{% elif data[4] == 'True' %}
+    <p>この作品は部分的に映像化されています。</p>
+{% elif data[4] == 'False' %}
     <p>映像化されていません。</p>
-{% endif %}
-
-{% if data[5] == 1 %}
-    <p>このシリーズは完結しました。</p>
 {% else %}
-    <p>このシリーズは完結していません。</p>
+    <p>映像化されているか不明です。</p>
 {% endif %}
 
-<p>一巻のISBNコード: {{ data[6] }}</p>
-<p>ジャンル: <a href="../genre/{{ data[8] }}">{{ data[8] }}</a></p>
+{% if data[5] == 'End' %}
+    <p>この作品はすべてがコミカライズされました。</p>
+{% elif data[5] == 'True' %}
+    <p>この作品は部分的にコミカライズされています。</p>
+{% elif data[5] == 'False' %}
+    <p>この作品はコミカライズされていません。</p>
+{% else %}
+    <p>この作品はコミカライズされているか不明です。</p>
+{% endif %}
+
+{% if data[6] == 'True' %}
+    <p>このシリーズは完結しました。</p>
+{% elif data[6] == 'False' %}
+    <p>このシリーズは完結していません。</p>
+{% else %}
+    <p>このシリーズは完結したのか不明です。</p>
+{% endif %}
+
+<p><a href="../book/{{ data[0] }}">既刊情報(不完全)</a></p>
+{% for row in genre %}
+    <p>ジャンル: <a href="../genre/{{ row }}">{{ row }}</a></p>
+{% endfor %}
 {% endblock %}

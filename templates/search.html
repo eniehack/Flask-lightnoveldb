@@ -1,4 +1,4 @@
-{% extends 'base_nocc.tpl' %}
+{% extends 'base_nocc.html' %}
 
 {% block title %}
 検索
@@ -12,12 +12,22 @@
         <fieldset>
             <legend>作品検索</legend>
 
-            <div class="six columns">
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
                 <label for="name">作品名 及び その一部</label>
                 <input type="text" name="title">
             </div>
 
-            <div class="six columns">
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
+                <label for="name">作家名</label>
+                <input type="text" name="writer">
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
+                <label for="name">イラストレータ名</label>
+                <input type="text" name="illustration">
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
                 <label for="name">文庫名</label>
                 <select name="label">
                     <option value="NULL">指定しない</option>
@@ -28,12 +38,7 @@
                 </select>
             </div>
 
-            <div class="pure-control-group">
-                <label for="name">作家名</label>
-                <input type="text" name="writer">
-            </div>
-
-            <div>
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-3">
                 <label for="name">ジャンル</label>
                 <select name="genre">
                     <option value="NULL">指定しない</option>
