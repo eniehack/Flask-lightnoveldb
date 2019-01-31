@@ -1,16 +1,17 @@
 # Flask-lightnoveldb
+
 このプロジェクトはライトノベルの検索ができるサイトを作っています.  
 使用言語はPython,使用フレームワークはFlaskです.
-ライセンスに関してはLICENSEをご覧ください
-## 必要パッケージ
-Flaskだけでいけます.
 
 ## インストール
-- 必要なパッケージをインストール  
-`pip install -r requirements.txt`
+
 - リポジトリをクローンする  
 
 `git clone https://github.com/eniehack/Flask-lightnoveldb.git`
+
+- 必要なパッケージをインストール  
+
+`pipenv install` 
 
 - SQLサーバにテーブルを作成する  
 
@@ -32,6 +33,7 @@ Flaskだけでいけます.
 ホスティングに関してはまったくわからないのでggってください
 
 ## License
+
 ### Flask
 
 Copyright © 2010 by the Pallets team.
@@ -99,8 +101,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ### Skeleton
-
-
 
 The MIT License (MIT)
 
